@@ -1,0 +1,24 @@
+item_id,product_name,department_name,price,stock_quantity,product_sales
+1,Socks,Clothing,2.50,14,0.00
+2,Shoes,Clothing,68.70,232,412.20
+3,Scarf,Clothing,7.50,5,0.00
+7,T-shirts,Clothing,10.00,5,170.00
+8,Saree,Clothing,150.00,12,0.00
+9,TV,Electronics,999.00,128,0.00
+10,"DVD Player",Electronics,80.00,1062,6240.00
+11,"Bluetooth speaker",Electronics,120.75,200,0.00
+12,Smartphone,Electronics,600.00,19999,600.00
+13,Laptop,Electronics,859.99,10,859.99
+14,Hose,"Home and Garden",20.75,4,83.00
+15,"Watering can","Home and Garden",6.75,8,13.50
+16,"Sunflower seeds","Home and Garden",0.75,8,3.00
+17,"Watermelon seeds","Home and Garden",0.75,97,0.00
+18,"Butternut Squash seeds","Home and Garden",0.75,30,0.00
+19,"Tomato seeds","Home and Garden",0.75,100,2.25
+20,spoons,cutlery,1.50,890,0.00
+23,"Butternut Squash",Pantry,1.50,500,0.00
+26,Shovel,"Home and Garden",10.56,890,0.00
+27,Rake,"Home and Garden",5.67,900,0.00
+28,Rattle,Toys,1.20,1000,0.00
+30,Toolbox,Toys,10.50,29,0.00
+31,"Washing Machine","Home and Garden",500.75,100,0.00

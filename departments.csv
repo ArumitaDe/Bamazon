@@ -1,0 +1,12 @@
+department_id,department_name,over_head_costs,total_sales
+1,Clothing,25.00,582.20
+2,Electronics,15.00,7699.99
+3,"Home and Garden",35.00,101.75
+4,cutlery,50.00,0.00
+5,Pantry,60.00,0.00
+6,Cosmetics,0.00,0.00
+9,Music,0.00,0.00
+12,Toys,0.00,0.00
+13,Games,0.00,0.00
+14,Books,100.00,0.00
+15,Medicine,500.00,0.00

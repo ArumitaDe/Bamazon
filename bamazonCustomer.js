@@ -133,17 +133,36 @@ function displayData()
         {   
             var newStock_quantity=(res[0].stock_quantity)-noOfItems;
            
-            connection.query("UPDATE products SET ? WHERE ?", 
+            connection.query("UPDATE products SET  ? WHERE ?", 
             [
                 {
                 stock_quantity: newStock_quantity
                 },
+                
                 {
                 product_name: itemChoice
                 }
             ], function(err, result) {});
             
             var orderTotal= (res[0].price)*noOfItems;
+            connection.query("UPDATE products SET product_sales=product_sales+"+orderTotal+" WHERE product_name='"+itemChoice+"';");
+            connection.query("UPDATE departments SET total_sales=total_sales+"+orderTotal+" WHERE department_name='"+res[0].department_name+"';");
+
+            /*connection.query("select distinct department_name from products",function(err, results) 
+            {
+                if (err) throw err;
+                for(var i=0;i<results.length;i++)
+                {
+                    console.log("nooooooo"+results[i].department_name);
+                    var depName = results[i].department_name;
+                    connection.query("select sum(product_sales) AS saleSum from products where department_name = '"
+                    +results[i].department_name+"'",function(err, res) 
+                        {
+                            if (err) throw err;
+                            saleSum=res[0].saleSum
+                        });
+                }
+            });*/
             console.log('\n-------------------------------------------------------------------------------------------\n');
             console.log('Your ordered '+noOfItems+' number of '+itemChoice+" at price $ "+res[0].price+" per unit");
             console.log('So your order total is $'+orderTotal);

@@ -16,6 +16,7 @@ var inquirer = require("inquirer");
 var Table = require('cli-table');
 var noOfItems=0;
 var bamazonItems=[];
+var	bamazonDepartments = [];
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -82,14 +83,14 @@ function viewProductsForSale()
           
             var table = new Table
             ({
-                head: ['Item Id', 'Product Name','Department Name', 'Price', 'Stock Quantity']
-              , colWidths: [10,30,30,12,17]
+                head: ['Item Id', 'Product Name','Department Name', 'Price', 'Stock Quantity','Product Sales']
+              , colWidths: [10,22,22,12,17,17]
             });
 
             // table is an Array, so you can `push`, `unshift`, `splice` and friends
             for (var i = 0; i < results.length; i++)
             table.push(
-             [results[i].item_id,results[i].product_name,results[i].department_name,results[i].price,results[i].stock_quantity]
+             [results[i].item_id,results[i].product_name,results[i].department_name,results[i].price,results[i].stock_quantity,results[i].product_sales]
             );
             console.log(table.toString());
             console.log('\n-------------------------------------------------------------------------------------------\n');
@@ -164,6 +165,19 @@ function update()
 }
 function addNewProduct()
 {
+populateBamazonDepartments();
+function populateBamazonDepartments()
+{
+	bamazonDepartments = [];
+	connection.query("SELECT * FROM departments", function(err, results) 
+			{
+            if (err) throw err;
+            for(var i =0;i<results.length;i++)
+            bamazonDepartments.push(results[i].department_name);
+        	
+            });	
+}
+
 	inquirer.prompt([
 
     {
@@ -185,18 +199,10 @@ function addNewProduct()
         }
     },
     {
-        type: "input",
-        message: "Name of department?",
-        name: "department_name",
-        validate: function(value) 
-        {
-        if(value.length==0)
-        {
-          return 'Department name cannot be blank';
-        }
-        else
-          return true;
-        }
+        type: "list",
+        message: "Select name of department",
+        choices: bamazonDepartments,
+        name: "department_name"
     },
     {
         type: "input",
