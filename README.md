@@ -25,9 +25,7 @@ node bamazonManager.js
 
 or
 
-node 
-
-bamazonSupervisor.js
+node bamazonSupervisor.js
 
 
 
