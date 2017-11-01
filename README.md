@@ -9,11 +9,28 @@ Node, MySQL, JavaSript, jQuery, Inquirer.
 
 User command line prompts are written using Inquirer and the MySQL queries update store inventory quantities. This application provided practice in writing MySQL queries, and creating a Node command line application.
 
+You can access the app as a Customer, a Manager or a Supervisor.
 
-Download or Fork and then from root directory:
+Download or Clone and then from root directory:
 
 npm install
-npm start
+
+then
+
+node bamazonCustomer.js
+
+or
+
+node bamazonManager.js
+
+or
+
+node 
+
+bamazonSupervisor.js
+
+
+
 
 
 
